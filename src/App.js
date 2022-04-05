@@ -37,7 +37,17 @@ const Folder = (props) => {
 };
 
 const File = (props) => {
-  return <div>{props.name}</div>;
+  const { name } = props;
+  const fileExtension = name.split('.')[1];
+  const fileIcons = {
+    mp4: 'headphones',
+    jpeg: 'file image',
+    png: 'file image outline'
+  }
+  return <div>
+    <i className={`${fileIcons[fileExtension]} icon`}></i>
+    {name}
+  </div>;
 };
 
 export default App;
